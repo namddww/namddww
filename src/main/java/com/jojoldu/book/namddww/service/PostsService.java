@@ -23,7 +23,7 @@ public class PostsService {
 
     @Transactional
     public Long update(Long id, PostsUpdateRequestDto requestDto) {
-        Posts posts = PostsRepository
+        Posts posts = postsRepository // 대문자로 써서(메모리 적재 안되서) 한참 오류가 떳었다
                 .findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id=" + id));
 
